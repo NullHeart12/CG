@@ -49,6 +49,9 @@ void get_off(const string& filename)//get the data from the off file
 	}
 	//cout<<mesh.faces.size()<< ' ' << mesh.vertexs.size() << endl;
 	fin.close();
+	mesh->all_normal_of_faces();
+	mesh->all_normal_of_vertexs();
+	mesh->copy = mesh->vertexs;
 }
 
 void show_data()//for test
@@ -84,7 +87,7 @@ void KeyBoardEvent(unsigned char key, int x, int y)//keyboard event
 		change.dz -= 0.05;
 		break;
 	default:
-		MessageBox(NULL, L"oh,fuck bro,you pushed the wrong button", L"error", MB_OK);
+		MessageBox(NULL, L"oh,bro,you pushed the wrong button", L"error", MB_OK);
 		//cout << "fuck gay,you push the wrong button" << endl;
 		break;
 	}
@@ -103,7 +106,7 @@ void MouseEvent(int button, int state, int x, int y)//mouse event
 			//int currentClickTime = glutGet(GLUT_ELAPSED_TIME);
 			//int interVal = currentClickTime - LastClickTime;
 			//cout << x << ',' << y << endl;
-			
+
 			//if (x > coordinate[0][0][0] && x<coordinate[0][3][0] && y>coordinate[0][1][1] && y < coordinate[0][0][1] && interVal < 300)
 			//{
 			//	cout << 1 << endl;
@@ -131,18 +134,31 @@ void MouseEvent(int button, int state, int x, int y)//mouse event
 				change.angle_x += 3;
 			//else if (x > 1441 && x < 1485 && y>414 && y < 455)
 			//	change.dx -= 0.05;
-			
+
 			//LastClickTime = glutGet(GLUT_ELAPSED_TIME);
 		}
 		else if (state == GLUT_UP)
 			change.mouse_state = up;
 	}
 	else if (button == GLUT_RIGHT_BUTTON)
+	{
 		change = copy_;
+		mesh->update(copy_);
+	}
 	else if (button == 3)
+	{
 		change.scale += 0.05;
+		mesh->flag = 1;
+	}
 	else if (button == 4)
+	{
+		if (change.scale <= 0)
+		{	
+			change.scale = 0.05;
+		}
 		change.scale -= 0.05;
+		mesh->flag = 1;
+	}
 	//if (button == 3 || button == 4)
 	//{
 	//	for (int i = 0; i < mesh->ver_num; i++)
@@ -359,6 +375,8 @@ void display()//display the mesh
 	glPushMatrix();
 	
 	glScaled(change.scale, change.scale, change.scale);
+	if (mesh->flag)
+		mesh->update(change);
 	glTranslated(change.dx, change.dy, change.dz);
 	glRotated(change.angle_x, 0, 1, 0);
 	glRotated(change.angle_y, 1, 0, 0);
@@ -431,11 +449,10 @@ void test()//test the normal of vertexs
 
 int main(int argc, char** argv)
 {
-	//string filename = "D:\\study\\CG\\hfut\\exp\\Plane.off";
-	//get_off("D:\study\CG\hfut\exp\Plane.off");
+	//get_off("D:\\study\\CG\\hfut\\exp\\Plane.off");
 	get_off(argv[1]);
-	mesh->all_normal_of_faces();//get the normal of all faces
-	mesh->all_normal_of_vertexs();//get the normal of all vertexs
+	//get_off("Plane.off");
+	//mesh->update(change);
 	//show_data();
 	//test();
 

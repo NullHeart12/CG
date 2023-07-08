@@ -50,13 +50,15 @@ class Mesh//the class of mesh
 {
 public:
 	//the data of the class
+	int flag;//judge whether update the normal of the vertexs, 0 means no, 1 means yes
 	int ver_num, face_num;//the number of vertexs and faces
+	vector<Vertex> copy;//the copy of vertexs
 	vector<Vertex> vertexs;//the vector of vertexs
 	vector<Face> faces;//the vector of faces
 
 	//the constructor and destructor of the class
-	Mesh() {}
-	Mesh(int ver_num, int face_num) :ver_num(ver_num), face_num(face_num) {}
+	Mesh() { flag = 0; }
+	Mesh(int ver_num, int face_num) :ver_num(ver_num), face_num(face_num) { flag = 0; }
 	~Mesh() {}
 
 	//the function of the class
@@ -64,6 +66,7 @@ public:
 	void all_normal_of_faces();//calculate the normal of all faces
 	void normal(int index);//calculate the normal of the vertex
 	void all_normal_of_vertexs();//calculate the normal of all vertexs
+	void update(const Change& change);//update the mesh
 };
 
 #endif // !1

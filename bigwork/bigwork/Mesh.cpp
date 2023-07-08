@@ -33,7 +33,8 @@ void Mesh::all_normal_of_faces()//calculate the normal of all faces
 		normal(faces[i]);
 	auto end = std::chrono::steady_clock::now();
 	chrono::duration<double> diff = end - start;
-	cout << "time of normal of faces: " << diff.count() << " s\n";
+	//cout << "time of normal of faces: " << diff.count() << " s\n";
+	cout << "face:" << faces[0].normal[0] << ' ' << faces[0].normal[1] << ' ' << faces[0].normal[2] << endl;
 }
 
 void Mesh::normal(int index)//calculate the normal of the vertex
@@ -48,4 +49,16 @@ void Mesh::all_normal_of_vertexs()//calculate the normal of all vertexs
 {
 	for (int i = 0; i < vertexs.size(); i++)
 		normal(i);
+	cout << "vertex:" << vertexs[0].normal[0] << ' ' << vertexs[0].normal[1] << ' ' << vertexs[0].normal[2] << endl;
+}
+
+void Mesh::update(const Change& change)
+{
+	for (int i = 0; i < vertexs.size(); i++)
+	{
+		vertexs[i].normal[0] = copy[i].normal[0] * change.scale;
+		vertexs[i].normal[1] = copy[i].normal[1] * change.scale;
+		vertexs[i].normal[2] = copy[i].normal[2] * change.scale;
+	}
+	flag = 0;
 }
