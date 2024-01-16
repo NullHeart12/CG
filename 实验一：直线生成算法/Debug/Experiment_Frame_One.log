@@ -1,4 +1,0 @@
-﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
-  Experiment_Frame_OneView.cpp
-  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
-  Experiment_Frame_One.vcxproj -> D:\study\CG\hfut\exp\实验一：直线生成算法\Debug\Experiment_Frame_One.exe
