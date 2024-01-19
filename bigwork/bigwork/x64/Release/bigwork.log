@@ -1,0 +1,17 @@
+﻿  main.cpp
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(95,12): warning C4305: “初始化”: 从“double”到“float”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(193,23): warning C4101: “posZ”: 未引用的局部变量
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(193,17): warning C4101: “posY”: 未引用的局部变量
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(193,11): warning C4101: “posX”: 未引用的局部变量
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(303,37): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(304,33): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(304,40): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(304,47): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(322,45): warning C4305: “参数”: 从“double”到“GLfloat”截断
+D:\study\CG\hfut\exp\bigwork\bigwork\main.cpp(329,45): warning C4305: “参数”: 从“double”到“GLfloat”截断
+  正在生成代码
+  4 of 410 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  bigwork.vcxproj -> D:\study\CG\hfut\exp\bigwork\x64\Release\bigwork.exe
