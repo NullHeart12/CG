@@ -1,0 +1,15 @@
+﻿cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  StdAfx.cpp
+  _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+cl : 命令行  warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  SettingDialog.cpp
+  Polygon_ConversionView.cpp
+D:\study\CG\hfut\exp\实验二：多边形填充\Polygon_ConversionView.cpp(338,11): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\study\CG\hfut\exp\实验二：多边形填充\Polygon_ConversionView.cpp(465,10): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  Polygon_ConversionDoc.cpp
+  Polygon_Conversion.cpp
+D:\study\CG\hfut\exp\实验二：多边形填充\Polygon_Conversion.cpp(60,2): warning C4996: 'CWinApp::Enable3dControls': CWinApp::Enable3dControls is no longer needed. You should remove this call.
+  MainFrm.cpp
+  ColorWnd.cpp
+  正在生成代码...
+  Polygon_Conversion.vcxproj -> D:\study\CG\hfut\exp\实验二：多边形填充\Debug\Polygon_Conversion.exe
